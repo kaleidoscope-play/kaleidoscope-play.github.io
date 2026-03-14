@@ -5,9 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Kaleidoscope host dashboard concept: a streamer-ready party game control room with a living kaleidoscope backdrop."
+      content="Kaleidoscope: streamer-ready party games. Host on one screen, everyone joins from their phones. Launching soon."
     />
-    <title>Kaleidoscope | Host Dashboard</title>
+    <meta property="og:title" content="Kaleidoscope" />
+    <meta
+      property="og:description"
+      content="Party games for streamers. Host on one screen, players join on their phones. Launching soon."
+    />
+    <title>Kaleidoscope | Launching Soon</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,184 +25,268 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <canvas id="kaleido" aria-hidden="true"></canvas>
-    <div class="vignette" aria-hidden="true"></div>
-    <div class="grain" aria-hidden="true"></div>
+    <div class="bg" aria-hidden="true">
+      <div class="orb o1"></div>
+      <div class="orb o2"></div>
+      <div class="orb o3"></div>
+      <div class="gridNoise"></div>
+    </div>
 
-    <header class="topbar">
-      <div class="brand">
-        <div class="mark" aria-hidden="true"></div>
-        <div class="brandText">
-          <div class="brandName">
-            Kaleidoscope <span class="launchBadge"><span class="pulseDot" aria-hidden="true"></span>LAUNCHING SOON</span>
-          </div>
-          <div class="brandTag">Party games for streamers</div>
-        </div>
+    <header class="top">
+      <div class="banner" role="status" aria-live="polite">
+        <span class="badge"><span class="pulseDot" aria-hidden="true"></span>LAUNCHING SOON</span>
+        <span class="bannerText"
+          >A streamer-first party pack is on the way. Demo available now.</span
+        >
+        <a class="bannerLink" href="./dashboard/index.html">Open demo</a>
       </div>
 
-      <div class="topbarRight">
-        <div class="live" id="liveBadge" role="status" aria-live="polite">
-          <span class="dot" aria-hidden="true"></span>
-          <span class="label">Ready</span>
+      <nav class="nav">
+        <a class="logo" href="#top" aria-label="Kaleidoscope home">
+          <span class="mark" aria-hidden="true"></span>
+          <span class="word">Kaleidoscope</span>
+        </a>
+
+        <div class="navRight">
+          <a class="navLink" href="#how">How it works</a>
+          <a class="navLink" href="#games">Games</a>
+          <a class="navLink" href="#faq">FAQ</a>
+          <a class="btn btnGhost" href="./dashboard/index.html">Demo</a>
+          <a class="btn btnPrimary" href="mailto:hello@kaleidoscope.game"
+            >Join waitlist</a
+          >
         </div>
-        <button class="btn btnGhost" id="toggleMotion" type="button">
-          Reduce motion
-        </button>
-        <button class="btn btnPrimary" id="generateRoom" type="button">
-          Generate room
-        </button>
-      </div>
+      </nav>
     </header>
 
-    <main class="layout">
-      <section class="hero card">
-        <div class="heroLeft">
-          <h1 class="headline">
-            Host the chaos.
-            <span class="accent">Stream the color.</span>
+    <main id="top" class="wrap">
+      <section class="hero">
+        <div class="heroCopy">
+          <div class="kicker" aria-label="Launch status">
+            <span class="kickerBadge">Launching soon</span>
+            <span class="kickerText">Try the demo while we build</span>
+          </div>
+          <h1 class="h1">
+            Party games built for
+            <span class="accent">stream energy</span>.
           </h1>
-          <p class="subhead">
-            A streamer-ready control room for <b>Fakeout</b>: bluff trivia, fast
-            rounds, big reveals.
+          <p class="lead">
+            Host on one screen. Friends join on their phones. Stream the chaos.
+            Big buttons, fast rounds, and a visual identity that feels like a
+            living prism.
           </p>
 
-          <div class="roomRow" aria-label="Room code controls">
-            <div class="roomCode" aria-label="Room code">
-              <div class="roomLabel">ROOM</div>
-              <div class="roomValue" id="roomCode">----</div>
-            </div>
-            <button class="btn btnGlow" id="copyRoom" type="button" disabled>
-              Copy code
-            </button>
-            <button class="btn btnGhost" id="resetDemo" type="button">
-              Reset demo
-            </button>
+          <div class="ctaRow">
+            <a class="btn btnPrimary btnBig" href="./dashboard/index.html">
+              Try the demo dashboard
+            </a>
+            <a class="btn btnGlow btnBig" href="#how">See the concept</a>
           </div>
 
-          <div class="stats">
-            <div class="stat">
-              <div class="statKey">Players</div>
-              <div class="statVal" id="statPlayers">0</div>
-              <div class="statSub">Connected phones</div>
+          <div class="trust">
+            <div class="trustItem">
+              <div class="trustK">Players</div>
+              <div class="trustV">3–8</div>
             </div>
-            <div class="stat">
-              <div class="statKey">Bluff rate</div>
-              <div class="statVal" id="statBluff">0%</div>
-              <div class="statSub">Fakes voted as real</div>
+            <div class="trustItem">
+              <div class="trustK">Audience</div>
+              <div class="trustV">100+</div>
             </div>
-            <div class="stat">
-              <div class="statKey">Rounds</div>
-              <div class="statVal" id="statRounds">0</div>
-              <div class="statSub">Per session average</div>
+            <div class="trustItem">
+              <div class="trustK">Languages</div>
+              <div class="trustV">EN / HI / Hinglish</div>
             </div>
           </div>
         </div>
 
-        <div class="heroRight">
-          <div class="panelTitle">Stream Preview</div>
-          <div class="preview" aria-label="Stream overlay preview">
-            <div class="previewTop">
-              <div class="pill">FAKEOUT</div>
-              <div class="pill ghost" id="categoryPill">Weird &amp; Wonderful</div>
-            </div>
-            <div class="previewQuestion" id="questionText">
-              What everyday object was once used as an early form of “paper” by
-              Romans?
-            </div>
-            <div class="previewAnswers" id="answers">
-              <div class="ans">Bread crusts</div>
-              <div class="ans">Onion skins</div>
-              <div class="ans hot">Wax tablets</div>
-              <div class="ans">Sea shells</div>
-            </div>
-            <div class="previewFooter">
-              <div class="meter">
-                <div class="meterFill" id="meterFill" style="width: 35%"></div>
+        <div class="heroCard" aria-label="Product preview">
+          <div class="cardTop">
+            <div class="chip hot">HOST SCREEN</div>
+            <div class="chip">PHONE JOIN</div>
+            <div class="chip">STREAM READY</div>
+          </div>
+
+          <div class="mock">
+            <div class="mockHeader">
+              <div class="room">
+                <div class="roomLabel">ROOM</div>
+                <div class="roomCode" id="roomCode">----</div>
               </div>
-              <div class="tiny" id="phaseText">Collecting fakes</div>
+              <button class="btn btnGhost btnSmall" id="genRoom" type="button">
+                Generate
+              </button>
+            </div>
+            <div class="mockBody">
+              <div class="q">
+                A wild prompt drops. Everyone submits a fake. Then you vote on
+                what’s real.
+              </div>
+              <div class="choices">
+                <div class="choice">Convincing fake</div>
+                <div class="choice hot">Real answer</div>
+                <div class="choice">Chaotic fake</div>
+                <div class="choice">Too real fake</div>
+              </div>
+              <div class="bar">
+                <div class="fill" id="fill" style="width: 38%"></div>
+              </div>
+              <div class="tiny" id="phase">Collecting fakes</div>
             </div>
           </div>
 
-          <div class="controls">
-            <button class="btn btnPrimary" id="nextPhase" type="button">
-              Next phase
-            </button>
-            <button class="btn btnGhost" id="shuffleQ" type="button">
-              Shuffle question
-            </button>
-            <button class="btn btnGhost" id="toggleLive" type="button">
-              Go live
-            </button>
+          <div class="cardBottom">
+            <div class="miniStat">
+              <div class="miniK">Latency</div>
+              <div class="miniV">Realtime</div>
+            </div>
+            <div class="miniStat">
+              <div class="miniK">Setup</div>
+              <div class="miniV">30 seconds</div>
+            </div>
+            <div class="miniStat">
+              <div class="miniK">Vibe</div>
+              <div class="miniV">Loud</div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="grid">
-        <article class="card mini">
-          <h2 class="cardTitle">Game Mix</h2>
-          <p class="cardCopy">
-            Swap games on the fly. This page is a static concept, but the vibe
-            is real: crisp host controls, bold typography, and an always-moving
-            background for stream energy.
+      <section id="how" class="section">
+        <div class="sectionHead">
+          <h2 class="h2">How it works</h2>
+          <p class="sub">
+            Designed like a show: one host screen, many phones, and a clean
+            layout that reads well on stream.
           </p>
-          <div class="chips" aria-label="Available games">
-            <span class="chip hot">Fakeout</span>
-            <span class="chip">Coming soon</span>
-            <span class="chip">Party mode</span>
-          </div>
-        </article>
+        </div>
 
-        <article class="card mini">
-          <h2 class="cardTitle">Audience Hooks</h2>
-          <p class="cardCopy">
-            Add a QR overlay and let chat join instantly. Big buttons, big
-            timing, zero fuss.
-          </p>
-          <div class="qrMock" aria-hidden="true">
-            <div class="qrPix"></div>
-            <div class="qrPix"></div>
-            <div class="qrPix"></div>
-            <div class="qrPix"></div>
-            <div class="qrPix"></div>
-            <div class="qrPix"></div>
-            <div class="qrPix"></div>
-            <div class="qrPix"></div>
-            <div class="qrPix"></div>
-            <div class="qrPix"></div>
-            <div class="qrPix"></div>
-            <div class="qrPix"></div>
-          </div>
-        </article>
-
-        <article class="card mini">
-          <h2 class="cardTitle">Kaleidoscope Engine</h2>
-          <p class="cardCopy">
-            The background is a canvas kaleidoscope that responds to your
-            pointer. Drag around to “steer” the prism. On mobile, tap and
-            swipe.
-          </p>
-          <div class="sliderRow" aria-label="Intensity controls">
-            <label class="sliderLabel" for="intensity">Intensity</label>
-            <input id="intensity" type="range" min="0" max="100" value="72" />
-          </div>
-        </article>
+        <div class="steps">
+          <article class="step">
+            <div class="num">01</div>
+            <h3 class="h3">Start a room</h3>
+            <p class="p">
+              Launch on your laptop. A room code appears instantly, optimized
+              for streaming and easy reading.
+            </p>
+          </article>
+          <article class="step">
+            <div class="num">02</div>
+            <h3 class="h3">Friends join on phones</h3>
+            <p class="p">
+              No installs. Open a mobile browser, enter the code, and you’re
+              in. Works great across mixed devices.
+            </p>
+          </article>
+          <article class="step">
+            <div class="num">03</div>
+            <h3 class="h3">Play fast, reveal big</h3>
+            <p class="p">
+              Short rounds. High social energy. The best moments are the
+              reveals, not the menus.
+            </p>
+          </article>
+        </div>
       </section>
 
-      <footer class="footer">
-        <div class="footerLeft">
-          <div class="footerTitle">This is a static dashboard concept</div>
-          <div class="footerCopy">
-            Built to match Kaleidoscope’s vibe: streamer-friendly, playful, and
-            loud in the best way.
+      <section id="games" class="section">
+        <div class="sectionHead">
+          <h2 class="h2">Games</h2>
+          <p class="sub">
+            The pack is designed to mix quick wit, performance, and creative
+            chaos. The demo focuses on the host experience.
+          </p>
+        </div>
+
+        <div class="cards">
+          <article class="gameCard">
+            <div class="gameTop">
+              <div class="chip hot">PLAYABLE FIRST</div>
+              <div class="gameName">Fakeout</div>
+            </div>
+            <p class="p">
+              A bluff-and-vote party game built for big reveals and even bigger
+              trash talk.
+            </p>
+          </article>
+
+          <article class="gameCard">
+            <div class="gameTop">
+              <div class="chip">PLANNED</div>
+              <div class="gameName">Sach Ya Scheme</div>
+            </div>
+            <p class="p">
+              Truth vs bluff with India-flavored prompts. Write fast, fake
+              better, and spot the real answer.
+            </p>
+          </article>
+
+          <article class="gameCard">
+            <div class="gameTop">
+              <div class="chip">PLANNED</div>
+              <div class="gameName">Overruled</div>
+            </div>
+            <p class="p">
+              Absurd debates with timed arguments and audience voting. High
+              energy, low friction.
+            </p>
+          </article>
+        </div>
+
+        <div class="demoRow">
+          <div class="demoBox">
+            <div class="demoTitle">Want a feel for the product?</div>
+            <div class="demoCopy">
+              Open the static demo dashboard: room code, stream preview, and a
+              kaleidoscope visual identity.
+            </div>
           </div>
+          <a class="btn btnPrimary btnBig" href="../dashboard/index.html">
+            Open demo dashboard
+          </a>
+        </div>
+      </section>
+
+      <section id="faq" class="section">
+        <div class="sectionHead">
+          <h2 class="h2">FAQ</h2>
+          <p class="sub">Short answers for the obvious questions.</p>
+        </div>
+
+        <div class="faq">
+          <details class="qa" open>
+            <summary>Is this the real app?</summary>
+            <div class="a">
+              This page is a static marketing concept. The demo button opens a
+              static host-dashboard concept to show the vibe and flow.
+            </div>
+          </details>
+          <details class="qa">
+            <summary>How do players join?</summary>
+            <div class="a">
+              Room code on the host screen, players enter it on their phone
+              browser. No installs.
+            </div>
+          </details>
+          <details class="qa">
+            <summary>Can I stream it?</summary>
+            <div class="a">
+              That’s the point. The host layout is designed to read well at a
+              distance, with big typography and clean structure.
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <footer class="foot">
+        <div class="footLeft">
+          <div class="footTitle">Kaleidoscope</div>
+          <div class="footCopy">Streamer-first party games. Coming soon.</div>
           <div class="build">Build: 2026-03-14 19:35 IST</div>
         </div>
-        <div class="footerRight">
-          <a class="link" href="../website/index.html">Landing site</a>
-          <span class="sep" aria-hidden="true">•</span>
-          <a class="link" href="../README.md">Project README</a>
-          <span class="sep" aria-hidden="true">•</span>
-          <a class="link" href="../docs/">Docs</a>
+        <div class="footRight">
+          <a class="footLink" href="./dashboard/index.html">Demo</a>
+          <a class="footLink" href="./README.md">README</a>
+          <a class="footLink" href="mailto:hello@kaleidoscope.game">Contact</a>
         </div>
       </footer>
     </main>

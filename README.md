@@ -1,25 +1,14 @@
-# Dashboard (Static Concept)
+# Kaleidoscope (GitHub Pages)
 
-This folder contains a standalone, static host-dashboard concept page for the Kaleidoscope project.
+This repo is the static website for Kaleidoscope.
 
-## Open It
+- Landing page: `index.html`
+- Demo dashboard: `dashboard/index.html`
 
-- Open `index.html` directly in a browser (double-click), or
-- Run a tiny static server from this folder (recommended):
+## Local Preview
 
 ```bash
-cd kaleidoscope/dashboard
 python3 -m http.server 8080
 ```
 
-Then open `http://localhost:8080`.
-
-
-## One-Command Serve
-
-```bash
-cd kaleidoscope/dashboard
-python3 serve.py
-```
-
-This serves from the repo root, so you can also open the landing page at `/website/index.html` on the same port.
+Then open `http://127.0.0.1:8080/`.

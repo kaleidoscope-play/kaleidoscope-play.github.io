@@ -13,7 +13,7 @@
     </radialGradient>
   </defs>
   <rect x="10" y="10" width="108" height="108" rx="34" fill="url(#g)"/>
-  <path d="M64 20 L94 64 L64 108 L34 64 Z" fill="rgba(11,12,24,0.18)"/>
+  <path d="M64 20 L94 64 L64 108 L34 64 Z" fill="rgba(15,16,32,0.18)"/>
   <rect x="10" y="10" width="108" height="108" rx="34" fill="url(#h)"/>
 </svg>
 
