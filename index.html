@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Kaleidoscope host dashboard concept: a streamer-ready party game control room with a living kaleidoscope backdrop."
+    />
+    <title>Kaleidoscope | Host Dashboard</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <canvas id="kaleido" aria-hidden="true"></canvas>
+    <div class="vignette" aria-hidden="true"></div>
+    <div class="grain" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <div class="brand">
+        <div class="mark" aria-hidden="true"></div>
+        <div class="brandText">
+          <div class="brandName">
+            Kaleidoscope <span class="launchBadge"><span class="pulseDot" aria-hidden="true"></span>LAUNCHING SOON</span>
+          </div>
+          <div class="brandTag">Party games for streamers</div>
+        </div>
+      </div>
+
+      <div class="topbarRight">
+        <div class="live" id="liveBadge" role="status" aria-live="polite">
+          <span class="dot" aria-hidden="true"></span>
+          <span class="label">Ready</span>
+        </div>
+        <button class="btn btnGhost" id="toggleMotion" type="button">
+          Reduce motion
+        </button>
+        <button class="btn btnPrimary" id="generateRoom" type="button">
+          Generate room
+        </button>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="hero card">
+        <div class="heroLeft">
+          <h1 class="headline">
+            Host the chaos.
+            <span class="accent">Stream the color.</span>
+          </h1>
+          <p class="subhead">
+            A streamer-ready control room for <b>Fakeout</b>: bluff trivia, fast
+            rounds, big reveals.
+          </p>
+
+          <div class="roomRow" aria-label="Room code controls">
+            <div class="roomCode" aria-label="Room code">
+              <div class="roomLabel">ROOM</div>
+              <div class="roomValue" id="roomCode">----</div>
+            </div>
+            <button class="btn btnGlow" id="copyRoom" type="button" disabled>
+              Copy code
+            </button>
+            <button class="btn btnGhost" id="resetDemo" type="button">
+              Reset demo
+            </button>
+          </div>
+
+          <div class="stats">
+            <div class="stat">
+              <div class="statKey">Players</div>
+              <div class="statVal" id="statPlayers">0</div>
+              <div class="statSub">Connected phones</div>
+            </div>
+            <div class="stat">
+              <div class="statKey">Bluff rate</div>
+              <div class="statVal" id="statBluff">0%</div>
+              <div class="statSub">Fakes voted as real</div>
+            </div>
+            <div class="stat">
+              <div class="statKey">Rounds</div>
+              <div class="statVal" id="statRounds">0</div>
+              <div class="statSub">Per session average</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="heroRight">
+          <div class="panelTitle">Stream Preview</div>
+          <div class="preview" aria-label="Stream overlay preview">
+            <div class="previewTop">
+              <div class="pill">FAKEOUT</div>
+              <div class="pill ghost" id="categoryPill">Weird &amp; Wonderful</div>
+            </div>
+            <div class="previewQuestion" id="questionText">
+              What everyday object was once used as an early form of “paper” by
+              Romans?
+            </div>
+            <div class="previewAnswers" id="answers">
+              <div class="ans">Bread crusts</div>
+              <div class="ans">Onion skins</div>
+              <div class="ans hot">Wax tablets</div>
+              <div class="ans">Sea shells</div>
+            </div>
+            <div class="previewFooter">
+              <div class="meter">
+                <div class="meterFill" id="meterFill" style="width: 35%"></div>
+              </div>
+              <div class="tiny" id="phaseText">Collecting fakes</div>
+            </div>
+          </div>
+
+          <div class="controls">
+            <button class="btn btnPrimary" id="nextPhase" type="button">
+              Next phase
+            </button>
+            <button class="btn btnGhost" id="shuffleQ" type="button">
+              Shuffle question
+            </button>
+            <button class="btn btnGhost" id="toggleLive" type="button">
+              Go live
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="grid">
+        <article class="card mini">
+          <h2 class="cardTitle">Game Mix</h2>
+          <p class="cardCopy">
+            Swap games on the fly. This page is a static concept, but the vibe
+            is real: crisp host controls, bold typography, and an always-moving
+            background for stream energy.
+          </p>
+          <div class="chips" aria-label="Available games">
+            <span class="chip hot">Fakeout</span>
+            <span class="chip">Coming soon</span>
+            <span class="chip">Party mode</span>
+          </div>
+        </article>
+
+        <article class="card mini">
+          <h2 class="cardTitle">Audience Hooks</h2>
+          <p class="cardCopy">
+            Add a QR overlay and let chat join instantly. Big buttons, big
+            timing, zero fuss.
+          </p>
+          <div class="qrMock" aria-hidden="true">
+            <div class="qrPix"></div>
+            <div class="qrPix"></div>
+            <div class="qrPix"></div>
+            <div class="qrPix"></div>
+            <div class="qrPix"></div>
+            <div class="qrPix"></div>
+            <div class="qrPix"></div>
+            <div class="qrPix"></div>
+            <div class="qrPix"></div>
+            <div class="qrPix"></div>
+            <div class="qrPix"></div>
+            <div class="qrPix"></div>
+          </div>
+        </article>
+
+        <article class="card mini">
+          <h2 class="cardTitle">Kaleidoscope Engine</h2>
+          <p class="cardCopy">
+            The background is a canvas kaleidoscope that responds to your
+            pointer. Drag around to “steer” the prism. On mobile, tap and
+            swipe.
+          </p>
+          <div class="sliderRow" aria-label="Intensity controls">
+            <label class="sliderLabel" for="intensity">Intensity</label>
+            <input id="intensity" type="range" min="0" max="100" value="72" />
+          </div>
+        </article>
+      </section>
+
+      <footer class="footer">
+        <div class="footerLeft">
+          <div class="footerTitle">This is a static dashboard concept</div>
+          <div class="footerCopy">
+            Built to match Kaleidoscope’s vibe: streamer-friendly, playful, and
+            loud in the best way.
+          </div>
+          <div class="build">Build: 2026-03-14 19:35 IST</div>
+        </div>
+        <div class="footerRight">
+          <a class="link" href="../website/index.html">Landing site</a>
+          <span class="sep" aria-hidden="true">•</span>
+          <a class="link" href="../README.md">Project README</a>
+          <span class="sep" aria-hidden="true">•</span>
+          <a class="link" href="../docs/">Docs</a>
+        </div>
+      </footer>
+    </main>
+
+    <script src="./app.js" defer></script>
+  </body>
+</html>
