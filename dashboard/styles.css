@@ -687,6 +687,50 @@ input[type="range"] {
   }
 }
 
+@media (max-width: 560px) {
+  .topbar {
+    padding: 14px 14px;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .brand {
+    min-width: unset;
+  }
+  .topbarRight {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .layout {
+    padding: 18px 14px 54px;
+  }
+  .hero {
+    padding: 14px;
+    gap: 14px;
+  }
+  .headline {
+    font-size: 30px;
+  }
+  .subhead {
+    font-size: 15px;
+  }
+  .stats {
+    grid-template-columns: 1fr;
+  }
+  .roomCode {
+    min-width: 0;
+    width: 100%;
+  }
+  .roomRow .btn {
+    width: 100%;
+  }
+  .previewAnswers {
+    grid-template-columns: 1fr;
+  }
+  .controls .btn {
+    width: 100%;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 1ms !important;

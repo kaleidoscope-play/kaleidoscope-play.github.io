@@ -244,6 +244,49 @@ a {
   justify-content: flex-end;
 }
 
+.menu {
+  display: none;
+  position: relative;
+}
+
+.menu summary {
+  list-style: none;
+}
+
+.menu summary::-webkit-details-marker {
+  display: none;
+}
+
+.menuPanel {
+  position: absolute;
+  right: 0;
+  top: 52px;
+  min-width: 220px;
+  padding: 12px;
+  border-radius: 18px;
+  border: 1px solid var(--stroke);
+  background: rgba(6, 6, 18, 0.86);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 22px 90px rgba(0, 0, 0, 0.6);
+  display: grid;
+  gap: 8px;
+}
+
+.menuLink {
+  text-decoration: none;
+  padding: 10px 10px;
+  border-radius: 14px;
+  color: rgba(255, 246, 231, 0.9);
+  background: rgba(255, 246, 231, 0.06);
+  border: 1px solid rgba(255, 246, 231, 0.12);
+  font-weight: 700;
+}
+
+.menuLink:hover {
+  background: rgba(255, 246, 231, 0.09);
+  border-color: rgba(255, 246, 231, 0.2);
+}
+
 .navLink {
   text-decoration: none;
   color: rgba(255, 246, 231, 0.82);
@@ -767,6 +810,49 @@ a {
   }
   .trust {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .banner {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+  .navRight {
+    display: none;
+  }
+  .menu {
+    display: block;
+  }
+}
+
+@media (max-width: 520px) {
+  .wrap {
+    padding: 18px 14px 48px;
+  }
+  .h1 {
+    font-size: 36px;
+  }
+  .lead {
+    font-size: 15px;
+  }
+  .ctaRow {
+    gap: 8px;
+  }
+  .btnBig {
+    width: 100%;
+  }
+  .heroCard {
+    padding: 12px;
+  }
+  .choices {
+    grid-template-columns: 1fr;
+  }
+  .cardBottom {
+    grid-template-columns: 1fr;
+  }
+  .demoRow {
+    align-items: stretch;
   }
 }
 
