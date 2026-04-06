@@ -5,19 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Kaleidoscope: streamer-ready party games. Host on one screen, everyone joins from their phones. Launching soon."
+      content="Kaleidoscope is building an all-new party experience. Join the waitlist for the reveal."
     />
     <meta property="og:title" content="Kaleidoscope" />
     <meta
       property="og:description"
-      content="Party games for streamers. Host on one screen, players join on their phones. Launching soon."
+      content="An unforgettable new game is on the way. Join the waitlist before the reveal."
     />
-    <title>Kaleidoscope | Launching Soon</title>
+    <title>Kaleidoscope | Join the Waitlist</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap"
       rel="stylesheet"
     />
 
@@ -25,281 +25,173 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <div class="bg" aria-hidden="true">
-      <div class="orb o1"></div>
-      <div class="orb o2"></div>
-      <div class="orb o3"></div>
-      <div class="gridNoise"></div>
+    <div class="scene" aria-hidden="true">
+      <div class="glow glowA"></div>
+      <div class="glow glowB"></div>
+      <div class="glow glowC"></div>
+      <div class="mesh"></div>
+      <div class="scanlines"></div>
     </div>
 
-    <header class="top">
-      <div class="banner" role="status" aria-live="polite">
-        <span class="badge"><span class="pulseDot" aria-hidden="true"></span>LAUNCHING SOON</span>
-        <span class="bannerText"
-          >A streamer-first party pack is on the way. Demo available now.</span
-        >
-        <a class="bannerLink" href="./dashboard/index.html">Open demo</a>
-      </div>
-
-      <nav class="nav">
-        <a class="logo" href="#top" aria-label="Kaleidoscope home">
-          <span class="mark" aria-hidden="true"></span>
-          <span class="word">Kaleidoscope</span>
-        </a>
-
-        <details class="menu">
-          <summary class="btn btnGhost">Menu</summary>
-          <div class="menuPanel" role="navigation" aria-label="Mobile navigation">
-            <a class="menuLink" href="#how">How it works</a>
-            <a class="menuLink" href="#games">Games</a>
-            <a class="menuLink" href="#faq">FAQ</a>
-            <a class="btn btnGhost" href="./dashboard/index.html">Demo</a>
-            <a class="btn btnPrimary" href="mailto:support.kaleidoscope@gmail.com">Join waitlist</a>
-          </div>
-        </details>
-
-        <div class="navRight">
-          <a class="navLink" href="#how">How it works</a>
-          <a class="navLink" href="#games">Games</a>
-          <a class="navLink" href="#faq">FAQ</a>
-          <a class="btn btnGhost" href="./dashboard/index.html">Demo</a>
-          <a class="btn btnPrimary" href="mailto:support.kaleidoscope@gmail.com"
-            >Join waitlist</a
-          >
-        </div>
-      </nav>
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="Kaleidoscope home">
+        <span class="brandMark"></span>
+        <span class="brandWord">Kaleidoscope</span>
+      </a>
+      <a class="topCta" href="#waitlist">Join the Waitlist</a>
     </header>
 
-    <main id="top" class="wrap">
+    <main id="top" class="page">
       <section class="hero">
         <div class="heroCopy">
-          <div class="kicker" aria-label="Launch status">
-            <span class="kickerBadge">Launching soon</span>
-            <span class="kickerText">Try the demo while we build</span>
+          <div class="eyebrow">
+            <span class="eyebrowDot"></span>
+            A new social game is nearing reveal
           </div>
-          <h1 class="h1">
-            Party games built for
-            <span class="accent">stream energy</span>.
+          <h1>
+            You’re still not ready for this.
+            <span> It’s about to take over the room.</span>
           </h1>
-          <p class="lead">
-            Host on one screen. Friends join on their phones. Stream the chaos.
-            Big buttons, fast rounds, and a visual identity that feels like a
-            living prism.
+          <p class="intro">
+            We are building something bright, competitive, ridiculous, and easy to love.
+            No spoilers yet. No early mechanics. Just a promise: when this drops, everyone
+            will want in.
           </p>
 
-          <div class="ctaRow">
-            <a class="btn btnPrimary btnBig" href="./dashboard/index.html">
-              Try the demo dashboard
-            </a>
-            <a class="btn btnGlow btnBig" href="#how">See the concept</a>
+          <div class="heroActions">
+            <a class="button buttonPrimary" href="#waitlist">Get Early Access</a>
+            <a class="button buttonGhost" href="#signal">Why people will love it</a>
           </div>
 
-          <div class="trust">
-            <div class="trustItem">
-              <div class="trustK">Players</div>
-              <div class="trustV">3–8</div>
+          <div class="proofStrip" aria-label="Launch promises">
+            <div class="proofCard">
+              <strong>Instantly inviting</strong>
+              <span>Built to pull in first-timers and regulars alike.</span>
             </div>
-            <div class="trustItem">
-              <div class="trustK">Audience</div>
-              <div class="trustV">100+</div>
+            <div class="proofCard">
+              <strong>Pure anticipation</strong>
+              <span>No gameplay shown here on purpose. The reveal should hit hard.</span>
             </div>
-            <div class="trustItem">
-              <div class="trustK">Languages</div>
-              <div class="trustV">EN / HI / Hinglish</div>
+            <div class="proofCard">
+              <strong>Made for everyone</strong>
+              <span>Friends, families, creators, parties, late-night chaos.</span>
             </div>
           </div>
         </div>
 
-        <div class="heroCard" aria-label="Product preview">
-          <div class="cardTop">
-            <div class="chip hot">HOST SCREEN</div>
-            <div class="chip">PHONE JOIN</div>
-            <div class="chip">STREAM READY</div>
-          </div>
+        <div class="heroVisual" aria-label="Atmospheric teaser">
+          <div class="signalCard">
+            <div class="signalHeader">
+              <span class="pill pillLive">Transmission Live</span>
+              <span class="pill">Reveal pending</span>
+            </div>
 
-          <div class="mock">
-            <div class="mockHeader">
-              <div class="room">
-                <div class="roomLabel">ROOM</div>
-                <div class="roomCode" id="roomCode">----</div>
+            <div class="signalCore">
+              <div class="ring ringOuter"></div>
+              <div class="ring ringMid"></div>
+              <div class="ring ringInner"></div>
+              <div class="coreText">
+                <span class="coreTop">ACCESS OPENS SOON</span>
+                <span class="coreBottom">Join before the signal peaks.</span>
               </div>
-              <button class="btn btnGhost btnSmall" id="genRoom" type="button">
-                Generate
-              </button>
             </div>
-            <div class="mockBody">
-              <div class="q">
-                A wild prompt drops. Everyone submits a fake. Then you vote on
-                what’s real.
-              </div>
-              <div class="choices">
-                <div class="choice">Convincing fake</div>
-                <div class="choice hot">Real answer</div>
-                <div class="choice">Chaotic fake</div>
-                <div class="choice">Too real fake</div>
-              </div>
-              <div class="bar">
-                <div class="fill" id="fill" style="width: 38%"></div>
-              </div>
-              <div class="tiny" id="phase">Collecting fakes</div>
-            </div>
-          </div>
 
-          <div class="cardBottom">
-            <div class="miniStat">
-              <div class="miniK">Latency</div>
-              <div class="miniV">Realtime</div>
-            </div>
-            <div class="miniStat">
-              <div class="miniK">Setup</div>
-              <div class="miniV">30 seconds</div>
-            </div>
-            <div class="miniStat">
-              <div class="miniK">Vibe</div>
-              <div class="miniV">Loud</div>
+            <div class="signalFooter">
+              <div class="metric">
+                <span class="metricLabel">Mood</span>
+                <strong>Electric</strong>
+              </div>
+              <div class="metric">
+                <span class="metricLabel">Energy</span>
+                <strong>All ages, all chaos</strong>
+              </div>
+              <div class="metric">
+                <span class="metricLabel">Status</span>
+                <strong id="statusText">Signal rising</strong>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="how" class="section">
-        <div class="sectionHead">
-          <h2 class="h2">How it works</h2>
-          <p class="sub">
-            Designed like a show: one host screen, many phones, and a clean
-            layout that reads well on stream.
+      <section id="signal" class="panel panelGrid">
+        <div class="panelIntro">
+          <p class="sectionTag">Why this page feels different</p>
+          <h2>Because the surprise matters.</h2>
+          <p>
+            Kaleidoscope is meant to arrive with momentum. So instead of showing you menus,
+            rounds, or rules, this page does one thing well: it invites you into the moment
+            before everyone starts talking about it.
           </p>
         </div>
 
-        <div class="steps">
-          <article class="step">
-            <div class="num">01</div>
-            <h3 class="h3">Start a room</h3>
-            <p class="p">
-              Launch on your laptop. A room code appears instantly, optimized
-              for streaming and easy reading.
+        <div class="featureList">
+          <article class="feature">
+            <span class="featureIndex">01</span>
+            <h3>Easy to say yes to</h3>
+            <p>
+              The best games need almost no convincing. You will feel that energy here from
+              the first second.
             </p>
           </article>
-          <article class="step">
-            <div class="num">02</div>
-            <h3 class="h3">Friends join on phones</h3>
-            <p class="p">
-              No installs. Open a mobile browser, enter the code, and you’re
-              in. Works great across mixed devices.
+          <article class="feature">
+            <span class="featureIndex">02</span>
+            <h3>Big group appeal</h3>
+            <p>
+              The vibe is simple: if people are in the room, they should want to join the fun.
             </p>
           </article>
-          <article class="step">
-            <div class="num">03</div>
-            <h3 class="h3">Play fast, reveal big</h3>
-            <p class="p">
-              Short rounds. High social energy. The best moments are the
-              reveals, not the menus.
+          <article class="feature">
+            <span class="featureIndex">03</span>
+            <h3>Memories over mechanics</h3>
+            <p>
+              What people remember will not be a ruleset. It will be the reactions, the noise,
+              and the stories after.
             </p>
           </article>
         </div>
       </section>
 
-      <section id="games" class="section">
-        <div class="sectionHead">
-          <h2 class="h2">Games</h2>
-          <p class="sub">
-            The pack is designed to mix quick wit, performance, and creative
-            chaos. The demo focuses on the host experience.
+      <section class="quoteBand">
+        <p>
+          “The kind of game people hear about once, then start asking when it launches.”
+        </p>
+      </section>
+
+      <section id="waitlist" class="panel waitlistPanel">
+        <div class="waitlistCopy">
+          <p class="sectionTag">Join before reveal</p>
+          <h2>Be first in when Kaleidoscope opens up.</h2>
+          <p>
+            Drop your email and we will send the reveal, launch updates, and early access
+            details straight to you.
           </p>
         </div>
 
-        <div class="cards">
-          <article class="gameCard">
-            <div class="gameTop">
-              <div class="chip hot">PLAYABLE FIRST</div>
-              <div class="gameName">Fakeout</div>
-            </div>
-            <p class="p">
-              A bluff-and-vote party game built for big reveals and even bigger
-              trash talk.
-            </p>
-          </article>
-
-          <article class="gameCard">
-            <div class="gameTop">
-              <div class="chip">PLANNED</div>
-              <div class="gameName">Sach Ya Scheme</div>
-            </div>
-            <p class="p">
-              Truth vs bluff with India-flavored prompts. Write fast, fake
-              better, and spot the real answer.
-            </p>
-          </article>
-
-          <article class="gameCard">
-            <div class="gameTop">
-              <div class="chip">PLANNED</div>
-              <div class="gameName">Overruled</div>
-            </div>
-            <p class="p">
-              Absurd debates with timed arguments and audience voting. High
-              energy, low friction.
-            </p>
-          </article>
-        </div>
-
-        <div class="demoRow">
-          <div class="demoBox">
-            <div class="demoTitle">Want a feel for the product?</div>
-            <div class="demoCopy">
-              Open the static demo dashboard: room code, stream preview, and a
-              kaleidoscope visual identity.
-            </div>
-          </div>
-          <a class="btn btnPrimary btnBig" href="../dashboard/index.html">
-            Open demo dashboard
-          </a>
-        </div>
+        <form
+          class="waitlistForm"
+          id="waitlistForm"
+          action="https://formspree.io/f/mwvwadnb"
+          method="POST"
+        >
+          <label class="srOnly" for="email">Email address</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            inputmode="email"
+            autocomplete="email"
+            placeholder="name@email.com"
+            required
+          />
+          <input type="hidden" name="_subject" value="New Kaleidoscope waitlist signup" />
+          <input type="hidden" name="_format" value="plain" />
+          <button class="button buttonPrimary formButton" type="submit">Join the Waitlist</button>
+          <p class="formNote" id="formNote">
+            No spam. Just updates, early access, and the reveal.
+          </p>
+        </form>
       </section>
-
-      <section id="faq" class="section">
-        <div class="sectionHead">
-          <h2 class="h2">FAQ</h2>
-          <p class="sub">Short answers for the obvious questions.</p>
-        </div>
-
-        <div class="faq">
-          <details class="qa" open>
-            <summary>Is this the real app?</summary>
-            <div class="a">
-              This page is a static marketing concept. The demo button opens a
-              static host-dashboard concept to show the vibe and flow.
-            </div>
-          </details>
-          <details class="qa">
-            <summary>How do players join?</summary>
-            <div class="a">
-              Room code on the host screen, players enter it on their phone
-              browser. No installs.
-            </div>
-          </details>
-          <details class="qa">
-            <summary>Can I stream it?</summary>
-            <div class="a">
-              That’s the point. The host layout is designed to read well at a
-              distance, with big typography and clean structure.
-            </div>
-          </details>
-        </div>
-      </section>
-
-      <footer class="foot">
-        <div class="footLeft">
-          <div class="footTitle">Kaleidoscope</div>
-          <div class="footCopy">Streamer-first party games. Coming soon.</div>
-          <div class="build">Build: 2026-03-14 19:35 IST</div>
-        </div>
-        <div class="footRight">
-          <a class="footLink" href="./dashboard/index.html">Demo</a>
-          <a class="footLink" href="./README.md">README</a>
-          <a class="footLink" href="mailto:support.kaleidoscope@gmail.com">Contact</a>
-        </div>
-      </footer>
     </main>
 
     <script src="./app.js" defer></script>
